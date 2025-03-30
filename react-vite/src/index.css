@@ -1,0 +1,193 @@
+/* Import the Anton font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+/* Set the Anton font for everything */
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* height: 100%; */
+  min-height: 100vh;
+  margin: 0; 
+}
+
+/* Night Theme - Cold */
+:root {
+  --background-color: #0b1120;
+  --text-primary-color: RGB(251, 206, 61);
+  --text-secondary-color: #9aa5b1;
+  --button-background-color: #1e2a38;
+  --button-text-color: #f0f6fc;
+  --border-color: #30363d;
+  --card-background-color: #16202c;
+  --highlight-color: #58a6ff;
+  --inactive-color: #4b5563;
+}
+
+body.dark-theme {
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+}
+
+/* Day Theme - Warm */
+body.light-theme {
+  --background-color: #f3f4f6;
+  --text-primary-color: #111827;
+  --text-secondary-color: #7f806b;
+  --button-background-color: #e5e7eb;
+  --button-text-color: #111827;
+  --border-color: #d1d5db;
+  --card-background-color: #ffffff;
+  --highlight-color: #ff9f43;
+  --inactive-color: #9ca3af;
+
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+}
+button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px; /* Circle shape */
+  width: fit-content; /* Ensure width and height are equal for the circular shape */
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: var(--highlight-color);
+}
+
+.card {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px; /* Optional: You can have rounded cards as well */
+}
+
+.inactive {
+  color: var(--inactive-color);
+}
+
+h1,
+h2,
+h3,
+p {
+  color: var(--text-primary-color);
+}
+
+a {
+  color: var(--highlight-color);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* below is loading */
+.lds-roller,
+.lds-roller div,
+.lds-roller div:after {
+  box-sizing: border-box;
+}
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7.2px;
+  height: 7.2px;
+  border-radius: 50%;
+  background: currentColor;
+  margin: -3.6px 0 0 -3.6px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 62.62742px;
+  left: 62.62742px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 67.71281px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 70.90963px;
+  left: 48.28221px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 70.90963px;
+  left: 31.71779px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 67.71281px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 62.62742px;
+  left: 17.37258px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12.28719px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.center-loading {
+  margin-top: 10em;
+  margin-bottom: 10em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* or absolute if you prefer */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: auto; /* Adjust this as needed */
+  flex-direction: column;
+}
