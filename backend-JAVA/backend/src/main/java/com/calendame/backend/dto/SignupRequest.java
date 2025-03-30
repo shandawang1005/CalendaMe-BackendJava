@@ -1,14 +1,21 @@
 package com.calendame.backend.dto;
 
-//used to collect data from frontend (request) and this class to secure data
-public class LoginRequest {
-
+public class SignupRequest {
+    private String username;
     private String email;
     private String password;
 
+    // ========== Getter 和 Setter 方法 ==========
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getEmail() {
         return email;
-
     }
 
     public void setEmail(String email) {
@@ -17,7 +24,6 @@ public class LoginRequest {
 
     public String getPassword() {
         return password;
-
     }
 
     public void setPassword(String password) {
