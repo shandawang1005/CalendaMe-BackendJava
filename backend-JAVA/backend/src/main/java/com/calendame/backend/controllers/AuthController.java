@@ -42,6 +42,8 @@ public class AuthController {
         Optional<User> userOptional = userRepository.findByEmail(loginRequest.getEmail());
 
         if (userOptional.isEmpty()) {
+
+            System.out.println("Login failed! User does not Exist.");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(Map.of("error", "Invalid email or password"));
         }
@@ -49,10 +51,12 @@ public class AuthController {
         User user = userOptional.get();
 
         if (!passwordEncoder.matches(loginRequest.getPassword(), user.getHashedPassword())) {
+            System.out.println("Login failed! Password does not match.");
+            System.out.println("Entered password: " + loginRequest.getPassword());
+            System.out.println("Stored hashed password: " + user.getHashedPassword());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(Map.of("error", "Invalid email or password"));
         }
-
         currentUser = user; // 模拟 login_user
         return ResponseEntity.ok(user);
     }

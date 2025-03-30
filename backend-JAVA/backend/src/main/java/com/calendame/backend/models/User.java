@@ -36,7 +36,7 @@ public class User {
     // ===================== 关系字段 =====================
 
     // 用户拥有的好友关系（自己是 user）
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Friend> friends = new ArrayList<>();
 
     // 用户发送的消息列表
